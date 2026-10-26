@@ -14,6 +14,8 @@
     <script src="js/main.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
     <header class="site-header" id="top">
         <div class="site-header__inner">
             <a class="site-header__logo" href="index.html">Клац</a>
@@ -34,7 +36,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main" class="main" tabindex="-1">
         <div class="page-header">
             <nav class="breadcrumbs" aria-label="Хлебные крошки">
                 <ol class="breadcrumbs__list">
@@ -50,9 +52,9 @@
             <div class="section__header">
                 <h2 class="section__title">Способы доставки</h2>
             </div>
-            <div class="table-wrapper">
+            <div class="table-wrapper" tabindex="0" role="region" aria-labelledby="delivery-table-caption">
                 <table class="info-table info-table--wide">
-                    <caption class="info-table__caption">Сроки и стоимость доставки</caption>
+                    <caption class="info-table__caption" id="delivery-table-caption">Сроки и стоимость доставки</caption>
                     <thead>
                         <tr>
                             <th class="info-table__head" scope="col">Способ</th>
