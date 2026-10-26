@@ -13,7 +13,9 @@
     --color-surface: #f7f7f7;
     --color-surface-accent: #eef5ff;
     --color-danger: #b00020;
-    --color-success: #168a2f;
+    /* Было #168a2f: белый текст на нём 4.46:1, Lighthouse считал это ошибкой.
+       #137a2a даёт 5.46:1 (нужно не меньше 4.5:1). */
+    --color-success: #137a2a;
     --color-success-bg: #eefaf0;
     --color-white: #ffffff;
 
@@ -75,16 +77,45 @@ a:hover {
 }
 
 /*
-Видимый фокус при переходе клавишей Tab.
+Видимый фокус при переходе клавишей Tab на всех интерактивных
+элементах: ссылки, кнопки, поля, раскрывающиеся вопросы, обёртка таблицы.
+Рамка 3px с отступом заметна и на синих кнопках.
 */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-summary:focus-visible {
-    outline: 2px solid var(--color-primary);
+:focus-visible {
+    outline: 3px solid var(--color-primary);
     outline-offset: 3px;
+}
+
+/*
+Ссылка пропуска к основному содержимому. Спрятана за верхним краем
+экрана и появляется только при фокусе с клавиатуры.
+display: none не используем, иначе до неё нельзя дойти клавишей Tab.
+*/
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: var(--space-md);
+    z-index: 1000;
+    padding: var(--space-sm) 12px;
+    color: var(--color-white);
+    background-color: var(--color-text);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    top: var(--space-md);
+    color: var(--color-white);
+}
+
+/*
+На main переходит фокус после ссылки пропуска (tabindex="-1").
+Рамку вокруг всего содержимого страницы не рисуем.
+*/
+.main:focus,
+.main:target {
+    outline: none;
 }
 
 /*
@@ -741,6 +772,20 @@ overflow-wrap: anywhere переносит длинные слова,
 .order-form__label {
     display: block;
     margin-bottom: var(--space-xs);
+}
+
+/*
+Звёздочка у обязательных полей. Для программ чтения с экрана она скрыта
+(aria-hidden), обязательность они берут из атрибута required.
+*/
+.order-form__required {
+    color: var(--color-danger);
+}
+
+.order-form__note {
+    margin: 0 0 var(--space-md);
+    font-size: 14px;
+    color: var(--color-muted);
 }
 
 /*
