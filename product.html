@@ -9,14 +9,18 @@
     <meta property="og:title" content="Клац 60 | Клац">
     <meta property="og:description" content="Клавиатура Клац 60: компактная механическая клавиатура 60% с горячей заменой свитчей. Характеристики и цены.">
     <meta property="og:image" content="https://svpeditor.github.io/kr3-responsive-shop/images/klac-60.jpg">
-    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="site-header" id="top">
         <div class="site-header__inner">
             <a class="site-header__logo" href="index.html">Клац</a>
 
-            <nav class="site-nav" aria-label="Основная навигация">
+            <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">&#9776;</span> Меню</button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
                 <ul class="site-nav__list">
                     <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
                     <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
@@ -42,11 +46,14 @@
 
         <section class="product">
             <div class="product__gallery">
-                <img class="product__image" src="images/klac-60.jpg" width="800" height="600" alt="Клавиатура Клац 60 с серыми и синими кейкапами, вид спереди">
+                <picture class="product__picture">
+                    <source type="image/webp" srcset="images/klac-60-480.webp 480w, images/klac-60.webp 800w" sizes="(min-width: 1148px) 534px, (min-width: 768px) 46vw, 100vw">
+                    <img class="product__image" src="images/klac-60.jpg" srcset="images/klac-60-480.jpg 480w, images/klac-60.jpg 800w" sizes="(min-width: 1148px) 534px, (min-width: 768px) 46vw, 100vw" width="800" height="600" alt="Клавиатура Клац 60 с серыми и синими кейкапами, вид спереди">
+                </picture>
                 <ul class="product__thumbs">
-                    <li><img class="product__thumb" src="images/klac-60-2.jpg" width="800" height="600" alt="Клац 60, вид слева" loading="lazy"></li>
-                    <li><img class="product__thumb" src="images/klac-60-3.jpg" width="800" height="600" alt="Клац 60, вид сбоку" loading="lazy"></li>
-                    <li><img class="product__thumb" src="images/klac-60-4.jpg" width="800" height="600" alt="Клац 60, вид сверху" loading="lazy"></li>
+                    <li><img class="product__thumb" src="images/klac-60-2.jpg" srcset="images/klac-60-2-480.jpg 480w, images/klac-60-2.jpg 800w" sizes="(min-width: 1148px) 170px, (min-width: 768px) 15vw, 30vw" width="800" height="600" alt="Клац 60, вид слева" loading="lazy"></li>
+                    <li><img class="product__thumb" src="images/klac-60-3.jpg" srcset="images/klac-60-3-480.jpg 480w, images/klac-60-3.jpg 800w" sizes="(min-width: 1148px) 170px, (min-width: 768px) 15vw, 30vw" width="800" height="600" alt="Клац 60, вид сбоку" loading="lazy"></li>
+                    <li><img class="product__thumb" src="images/klac-60-4.jpg" srcset="images/klac-60-4-480.jpg 480w, images/klac-60-4.jpg 800w" sizes="(min-width: 1148px) 170px, (min-width: 768px) 15vw, 30vw" width="800" height="600" alt="Клац 60, вид сверху" loading="lazy"></li>
                 </ul>
             </div>
 
@@ -87,50 +94,54 @@
                     <div class="section__header">
                         <h2 class="section__title">Характеристики</h2>
                     </div>
-                    <table class="info-table">
-                        <caption class="info-table__caption">Характеристики клавиатуры Клац 60</caption>
-                        <thead>
-                            <tr>
-                                <th class="info-table__head" scope="col">Параметр</th>
-                                <th class="info-table__head" scope="col">Значение</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Формат</th><td class="info-table__cell">60%, 61 клавиша</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Свитчи</th><td class="info-table__cell">Gateron Yellow, линейные</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Горячая замена</th><td class="info-table__cell">Есть, 3- и 5-пиновые свитчи</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Кейкапы</th><td class="info-table__cell">PBT, профиль Cherry</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Подключение</th><td class="info-table__cell">USB-C, кабель 1,5 м в комплекте</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Корпус</th><td class="info-table__cell">Пластик ABS, чёрный</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Размеры</th><td class="info-table__cell">295 x 105 x 40 мм</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Вес</th><td class="info-table__cell">590 г</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Гарантия</th><td class="info-table__cell">12 месяцев</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table class="info-table">
+                            <caption class="info-table__caption">Характеристики клавиатуры Клац 60</caption>
+                            <thead>
+                                <tr>
+                                    <th class="info-table__head" scope="col">Параметр</th>
+                                    <th class="info-table__head" scope="col">Значение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Формат</th><td class="info-table__cell">60%, 61 клавиша</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Свитчи</th><td class="info-table__cell">Gateron Yellow, линейные</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Горячая замена</th><td class="info-table__cell">Есть, 3- и 5-пиновые свитчи</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Кейкапы</th><td class="info-table__cell">PBT, профиль Cherry</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Подключение</th><td class="info-table__cell">USB-C, кабель 1,5 м в комплекте</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Корпус</th><td class="info-table__cell">Пластик ABS, чёрный</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Размеры</th><td class="info-table__cell">295 x 105 x 40 мм</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Вес</th><td class="info-table__cell">590 г</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Гарантия</th><td class="info-table__cell">12 месяцев</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <section class="section" id="bundles">
                     <div class="section__header">
                         <h2 class="section__title">Комплектации</h2>
                     </div>
-                    <table class="info-table">
-                        <caption class="info-table__caption">Что входит в каждую комплектацию</caption>
-                        <thead>
-                            <tr>
-                                <th class="info-table__head" scope="col">Что в коробке</th>
-                                <th class="info-table__head" scope="col">Базовая</th>
-                                <th class="info-table__head" scope="col">С тестером</th>
-                                <th class="info-table__head" scope="col">Полная</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Клавиатура и кабель</th><td class="info-table__cell">да</td><td class="info-table__cell">да</td><td class="info-table__cell">да</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Съёмник кейкапов</th><td class="info-table__cell">да</td><td class="info-table__cell">да</td><td class="info-table__cell">да</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Тестер свитчей</th><td class="info-table__cell">нет</td><td class="info-table__cell">да</td><td class="info-table__cell">да</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Запасные свитчи, 10 шт.</th><td class="info-table__cell">нет</td><td class="info-table__cell">нет</td><td class="info-table__cell">да</td></tr>
-                            <tr class="info-table__row"><th class="info-table__name" scope="row">Цена</th><td class="info-table__cell">5 490 ₽</td><td class="info-table__cell">6 190 ₽</td><td class="info-table__cell">7 190 ₽</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table class="info-table info-table--cards">
+                            <caption class="info-table__caption">Что входит в каждую комплектацию</caption>
+                            <thead>
+                                <tr>
+                                    <th class="info-table__head" scope="col">Что в коробке</th>
+                                    <th class="info-table__head" scope="col">Базовая</th>
+                                    <th class="info-table__head" scope="col">С тестером</th>
+                                    <th class="info-table__head" scope="col">Полная</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Клавиатура и кабель</th><td class="info-table__cell" data-label="Базовая">да</td><td class="info-table__cell" data-label="С тестером">да</td><td class="info-table__cell" data-label="Полная">да</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Съёмник кейкапов</th><td class="info-table__cell" data-label="Базовая">да</td><td class="info-table__cell" data-label="С тестером">да</td><td class="info-table__cell" data-label="Полная">да</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Тестер свитчей</th><td class="info-table__cell" data-label="Базовая">нет</td><td class="info-table__cell" data-label="С тестером">да</td><td class="info-table__cell" data-label="Полная">да</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Запасные свитчи, 10 шт.</th><td class="info-table__cell" data-label="Базовая">нет</td><td class="info-table__cell" data-label="С тестером">нет</td><td class="info-table__cell" data-label="Полная">да</td></tr>
+                                <tr class="info-table__row"><th class="info-table__name" scope="row">Цена</th><td class="info-table__cell" data-label="Базовая">5 490 ₽</td><td class="info-table__cell" data-label="С тестером">6 190 ₽</td><td class="info-table__cell" data-label="Полная">7 190 ₽</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <section class="section" id="description">
@@ -169,7 +180,10 @@
             <div class="products-grid">
                 <article class="product-card">
                     <span class="badge badge--new product-card__badge">Новинка</span>
-                    <img class="product-card__image" src="images/klac-65-wood.jpg" width="800" height="600" alt="Клавиатура Клац 65 Wood в деревянном корпусе" loading="lazy">
+                    <picture class="product-card__picture">
+                        <source type="image/webp" srcset="images/klac-65-wood-480.webp 480w, images/klac-65-wood.webp 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw">
+                        <img class="product-card__image" src="images/klac-65-wood.jpg" srcset="images/klac-65-wood-480.jpg 480w, images/klac-65-wood.jpg 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw" width="800" height="600" alt="Клавиатура Клац 65 Wood в деревянном корпусе" loading="lazy">
+                    </picture>
                     <div class="product-card__body">
                         <p class="product-card__category">Клавиатура 65%</p>
                         <h3 class="product-card__title"><a class="product-card__link" href="product.html">Клац 65 Wood</a></h3>
@@ -184,7 +198,10 @@
 
                 <article class="product-card product-card--discount">
                     <span class="badge badge--sale product-card__badge">Скидка</span>
-                    <img class="product-card__image" src="images/klac-tkl-graphite.jpg" width="800" height="600" alt="Тёмная клавиатура Клац TKL Graphite без цифрового блока" loading="lazy">
+                    <picture class="product-card__picture">
+                        <source type="image/webp" srcset="images/klac-tkl-graphite-480.webp 480w, images/klac-tkl-graphite.webp 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw">
+                        <img class="product-card__image" src="images/klac-tkl-graphite.jpg" srcset="images/klac-tkl-graphite-480.jpg 480w, images/klac-tkl-graphite.jpg 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw" width="800" height="600" alt="Тёмная клавиатура Клац TKL Graphite без цифрового блока" loading="lazy">
+                    </picture>
                     <div class="product-card__body">
                         <p class="product-card__category">Клавиатура TKL</p>
                         <h3 class="product-card__title"><a class="product-card__link" href="product.html">Клац TKL Graphite</a></h3>
@@ -199,7 +216,10 @@
 
                 <article class="product-card">
                     <span class="badge badge--new product-card__badge">Новинка</span>
-                    <img class="product-card__image" src="images/switch-tester.jpg" width="800" height="600" alt="Тестер с шестью свитчами разных цветов на прозрачной подставке" loading="lazy">
+                    <picture class="product-card__picture">
+                        <source type="image/webp" srcset="images/switch-tester-480.webp 480w, images/switch-tester.webp 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw">
+                        <img class="product-card__image" src="images/switch-tester.jpg" srcset="images/switch-tester-480.jpg 480w, images/switch-tester.jpg 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw" width="800" height="600" alt="Тестер с шестью свитчами разных цветов на прозрачной подставке" loading="lazy">
+                    </picture>
                     <div class="product-card__body">
                         <p class="product-card__category">Свитчи</p>
                         <h3 class="product-card__title"><a class="product-card__link" href="product.html">Тестер свитчей, 6 видов</a></h3>

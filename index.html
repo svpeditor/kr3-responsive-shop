@@ -9,15 +9,18 @@
     <meta property="og:title" content="Клац | Магазин механических клавиатур">
     <meta property="og:description" content="Клац - учебный интернет-магазин механических клавиатур, свитчей и кейкапов.">
     <meta property="og:image" content="https://svpeditor.github.io/kr3-responsive-shop/images/klac-60.jpg">
-    <link rel="stylesheet" href="css/style.css?v=6">
-    <script src="js/main.js?v=3" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="site-header" id="top">
         <div class="site-header__inner">
             <a class="site-header__logo" href="index.html">Клац</a>
 
-            <nav class="site-nav" aria-label="Основная навигация">
+            <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">&#9776;</span> Меню</button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
                 <ul class="site-nav__list">
                     <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
                     <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
@@ -33,15 +36,35 @@
 
     <main>
         <section class="hero">
-            <h1 class="hero__title">Магазин механических клавиатур</h1>
-            <p class="hero__text">
-                Продаём механические клавиатуры, свитчи, кейкапы и аксессуары.
-                Каждую клавиатуру проверяем перед отправкой.
-            </p>
-            <div class="hero__actions">
-                <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
-                <a class="button button--secondary" href="#popular">Популярные товары</a>
+            <div class="hero__content">
+                <h1 class="hero__title">Магазин механических клавиатур</h1>
+                <p class="hero__text">
+                    Продаём механические клавиатуры, свитчи, кейкапы и аксессуары.
+                    Каждую клавиатуру проверяем перед отправкой.
+                </p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
+                    <a class="button button--secondary" href="#popular">Популярные товары</a>
+                </div>
             </div>
+
+            <!--
+                picture: на компьютере (от 900px) показывается фото 4:3,
+                на телефоне и планшете - широкий кадр 16:9 того же фото.
+                Для узкого кадра есть два размера, браузер выбирает по srcset и sizes.
+            -->
+            <picture class="hero__picture">
+                <source media="(min-width: 900px)" srcset="images/hero-desktop.jpg" width="800" height="600">
+                <img
+                    class="hero__image"
+                    src="images/hero-mobile.jpg"
+                    srcset="images/hero-mobile-480.jpg 480w, images/hero-mobile.jpg 800w"
+                    sizes="(min-width: 768px) 720px, 100vw"
+                    width="800"
+                    height="450"
+                    alt="Клавиатура Клац 65 Wood в деревянном корпусе с зелёными и бордовыми кейкапами"
+                >
+            </picture>
         </section>
 
         <section class="section" id="advantages">
@@ -79,10 +102,13 @@
                 Заявка отправлена! Мы перезвоним в течение 15 минут в рабочее время.
             </p>
 
-            <div class="products-grid">
+            <div class="products-grid products-grid--wide">
                 <article class="product-card">
                     <span class="badge badge--hit product-card__badge">Хит</span>
-                    <img class="product-card__image" src="images/klac-60.jpg" width="800" height="600" alt="Клавиатура Клац 60 с серыми и синими кейкапами">
+                    <picture class="product-card__picture">
+                        <source type="image/webp" srcset="images/klac-60-480.webp 480w, images/klac-60.webp 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw">
+                        <img class="product-card__image" src="images/klac-60.jpg" srcset="images/klac-60-480.jpg 480w, images/klac-60.jpg 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw" width="800" height="600" alt="Клавиатура Клац 60 с серыми и синими кейкапами">
+                    </picture>
                     <div class="product-card__body">
                         <p class="product-card__category">Клавиатура 60%</p>
                         <h3 class="product-card__title"><a class="product-card__link" href="product.html">Клац 60</a></h3>
@@ -97,7 +123,10 @@
 
                 <article class="product-card">
                     <span class="badge badge--new product-card__badge">Новинка</span>
-                    <img class="product-card__image" src="images/klac-65-wood.jpg" width="800" height="600" alt="Клавиатура Клац 65 Wood в деревянном корпусе">
+                    <picture class="product-card__picture">
+                        <source type="image/webp" srcset="images/klac-65-wood-480.webp 480w, images/klac-65-wood.webp 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw">
+                        <img class="product-card__image" src="images/klac-65-wood.jpg" srcset="images/klac-65-wood-480.jpg 480w, images/klac-65-wood.jpg 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw" width="800" height="600" alt="Клавиатура Клац 65 Wood в деревянном корпусе">
+                    </picture>
                     <div class="product-card__body">
                         <p class="product-card__category">Клавиатура 65%</p>
                         <h3 class="product-card__title"><a class="product-card__link" href="product.html">Клац 65 Wood</a></h3>
@@ -112,7 +141,10 @@
 
                 <article class="product-card product-card--discount">
                     <span class="badge badge--sale product-card__badge">Скидка</span>
-                    <img class="product-card__image" src="images/klac-tkl-graphite.jpg" width="800" height="600" alt="Тёмная клавиатура Клац TKL Graphite без цифрового блока">
+                    <picture class="product-card__picture">
+                        <source type="image/webp" srcset="images/klac-tkl-graphite-480.webp 480w, images/klac-tkl-graphite.webp 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw">
+                        <img class="product-card__image" src="images/klac-tkl-graphite.jpg" srcset="images/klac-tkl-graphite-480.jpg 480w, images/klac-tkl-graphite.jpg 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw" width="800" height="600" alt="Тёмная клавиатура Клац TKL Graphite без цифрового блока">
+                    </picture>
                     <div class="product-card__body">
                         <p class="product-card__category">Клавиатура TKL</p>
                         <h3 class="product-card__title"><a class="product-card__link" href="product.html">Клац TKL Graphite</a></h3>
@@ -127,7 +159,10 @@
 
                 <article class="product-card">
                     <span class="badge badge--new product-card__badge">Новинка</span>
-                    <img class="product-card__image" src="images/switch-tester.jpg" width="800" height="600" alt="Тестер с шестью свитчами разных цветов на прозрачной подставке">
+                    <picture class="product-card__picture">
+                        <source type="image/webp" srcset="images/switch-tester-480.webp 480w, images/switch-tester.webp 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw">
+                        <img class="product-card__image" src="images/switch-tester.jpg" srcset="images/switch-tester-480.jpg 480w, images/switch-tester.jpg 800w" sizes="(min-width: 1024px) 260px, (min-width: 600px) 50vw, 100vw" width="800" height="600" alt="Тестер с шестью свитчами разных цветов на прозрачной подставке">
+                    </picture>
                     <div class="product-card__body">
                         <p class="product-card__category">Свитчи</p>
                         <h3 class="product-card__title"><a class="product-card__link" href="product.html">Тестер свитчей, 6 видов</a></h3>

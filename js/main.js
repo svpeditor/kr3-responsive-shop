@@ -1,3 +1,51 @@
+// Кнопка "Меню" в шапке. На телефоне и планшете пункты меню скрыты,
+// кнопка показывает и прячет их. С 1024px кнопка скрыта через CSS.
+const menuButton = document.querySelector('.site-header__toggle');
+const siteNav = document.getElementById('site-nav');
+
+if (menuButton && siteNav) {
+    menuButton.addEventListener('click', () => {
+        // toggle добавляет класс, если его нет, и убирает, если есть.
+        // Возвращает true, если меню открылось.
+        const isOpen = siteNav.classList.toggle('site-nav--open');
+
+        // aria-expanded сообщает программе чтения с экрана, открыто ли меню.
+        menuButton.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Клавиша Escape закрывает меню и возвращает фокус на кнопку.
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && siteNav.classList.contains('site-nav--open')) {
+            siteNav.classList.remove('site-nav--open');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.focus();
+        }
+    });
+
+    // После нажатия на пункт меню (например, якорь на этой же странице)
+    // меню закрывается, чтобы не закрывать собой раздел.
+    siteNav.addEventListener('click', (event) => {
+        if (event.target.closest('a')) {
+            siteNav.classList.remove('site-nav--open');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
+// Кнопка "Показать фильтры" в каталоге. На узком экране фильтры свёрнуты,
+// с 1200px они всегда открыты, а кнопка скрыта через CSS.
+const filtersButton = document.querySelector('.catalog-filters__toggle');
+const catalogFilters = document.querySelector('.catalog-filters');
+
+if (filtersButton && catalogFilters) {
+    filtersButton.addEventListener('click', () => {
+        const isOpen = catalogFilters.classList.toggle('catalog-filters--open');
+
+        filtersButton.setAttribute('aria-expanded', isOpen);
+        filtersButton.textContent = isOpen ? 'Скрыть фильтры' : 'Показать фильтры';
+    });
+}
+
 // Модальное окно быстрого заказа есть только на главной странице,
 // поэтому сначала проверяем, что оно найдено.
 const orderDialog = document.getElementById('order-dialog');
@@ -51,21 +99,16 @@ if (productSelect) {
     }
 }
 
-// Получаем форму заявки (в модальном окне или на странице order.html).
-const orderForm = document.getElementById('order-form');
-
-// Получаем сообщение об успешной отправке.
-const successMessage = document.getElementById('success-message');
-
-if (orderForm) {
-    // Обрабатываем отправку формы.
-    orderForm.addEventListener('submit', (event) => {
+// Проверка формы перед отправкой. Одинаково работает для формы заявки
+// (в модальном окне или на order.html) и формы обратной связи на contacts.html.
+function setupForm(form, successMessage) {
+    form.addEventListener('submit', (event) => {
         // Отменяем стандартную отправку формы,
         // потому что backend пока не подключён.
         event.preventDefault();
 
         // Сбрасываем предыдущие признаки ошибок.
-        const formElements = Array.from(orderForm.elements);
+        const formElements = Array.from(form.elements);
 
         formElements.forEach((element) => {
             if (element.willValidate) {
@@ -74,7 +117,7 @@ if (orderForm) {
         });
 
         // Проверяем встроенные HTML-ограничения формы.
-        if (!orderForm.checkValidity()) {
+        if (!form.checkValidity()) {
             formElements.forEach((element) => {
                 if (element.willValidate && !element.checkValidity()) {
                     element.setAttribute('aria-invalid', 'true');
@@ -82,7 +125,7 @@ if (orderForm) {
             });
 
             // Показываем стандартные сообщения браузера.
-            orderForm.reportValidity();
+            form.reportValidity();
             return;
         }
 
@@ -90,11 +133,25 @@ if (orderForm) {
         successMessage.hidden = false;
 
         // Очищаем форму.
-        orderForm.reset();
+        form.reset();
 
         // Закрываем модальное окно, если форма была в нём.
         if (orderDialog) {
             orderDialog.close();
         }
     });
+}
+
+// Форма заявки и сообщение об успешной отправке.
+const orderForm = document.getElementById('order-form');
+
+if (orderForm) {
+    setupForm(orderForm, document.getElementById('success-message'));
+}
+
+// Форма обратной связи на странице контактов.
+const feedbackForm = document.getElementById('feedback-form');
+
+if (feedbackForm) {
+    setupForm(feedbackForm, document.getElementById('feedback-success'));
 }
