@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Контакты магазина Клац: адрес шоурума, телефон, режим работы, форма обратной связи и ответы на частые вопросы.">
+    <meta name="description" content="Контакты мастерской Клац: адрес, карта, телефон, режим работы, форма обратной связи и ответы на частые вопросы.">
     <title>Контакты | Клац</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Контакты | Клац">
-    <meta property="og:description" content="Контакты магазина Клац: адрес шоурума, телефон, режим работы, форма обратной связи и ответы на частые вопросы.">
+    <meta property="og:description" content="Контакты мастерской Клац: адрес, карта, телефон, режим работы, форма обратной связи и ответы на частые вопросы.">
     <meta property="og:image" content="https://svpeditor.github.io/kr3-responsive-shop/images/klac-60.jpg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -28,9 +28,9 @@
                     <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
                     <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
                     <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">О мастерской</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Готовые сборки</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,14 +45,14 @@
                 </ol>
             </nav>
             <h1 class="page-header__title">Контакты</h1>
-            <p class="page-header__text">Приходите в шоурум попробовать клавиатуры вживую или напишите нам.</p>
+            <p class="page-header__text">Приносите клавиатуру в мастерскую, приходите попробовать готовые сборки или напишите нам.</p>
         </div>
 
         <div class="contacts">
             <section class="contacts__card">
-                <h2 class="contacts__title">Шоурум</h2>
-                <p class="contacts__text">Москва, ул. Примерная, 10, 2 этаж</p>
-                <p class="contacts__text">5 минут пешком от метро. Вход со двора, на двери наклейка с клавишей.</p>
+                <h2 class="contacts__title">Мастерская</h2>
+                <p class="contacts__text">Москва, ул. Большая Новодмитровская, 36, стр. 2, 3 этаж</p>
+                <p class="contacts__text">7 минут пешком от метро Дмитровская. На двери мастерской наклейка с клавишей.</p>
             </section>
 
             <section class="contacts__card">
@@ -64,16 +64,40 @@
 
             <section class="contacts__card">
                 <h2 class="contacts__title">Режим работы</h2>
-                <p class="contacts__text">Ежедневно с 10:00 до 20:00</p>
-                <p class="contacts__text">Заявки с сайта принимаем круглосуточно.</p>
+                <p class="contacts__text">Пн-Пт с 11:00 до 20:00</p>
+                <p class="contacts__text">Сб-Вс с 12:00 до 18:00</p>
+                <p class="contacts__text">Клавиатуру на диагностику можно принести без записи.</p>
             </section>
         </div>
+
+        <section class="section map" id="map">
+            <div class="section__header">
+                <h2 class="section__title">Как нас найти</h2>
+            </div>
+            <!--
+                Карта Яндекса через iframe (виджет Яндекс Карт).
+                ll - центр карты (долгота, широта), z - масштаб, pt - метка на адресе мастерской.
+            -->
+            <div class="map__frame">
+                <iframe
+                    class="map__iframe"
+                    src="https://yandex.ru/map-widget/v1/?ll=37.585262%2C55.805097&amp;z=16&amp;pt=37.585262%2C55.805097%2Cpm2blm"
+                    title="Мастерская Клац на Яндекс Картах"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <p class="map__text">
+                От метро Дмитровская идите по Бутырской улице к Большой Новодмитровской, вход через проходную.
+                <a href="https://yandex.ru/maps/?rtext=~55.805097%2C37.585262&amp;rtt=pd">Построить маршрут в Яндекс Картах</a>
+            </p>
+        </section>
 
         <section class="section feedback" id="feedback">
             <div class="section__header">
                 <h2 class="section__title">Обратная связь</h2>
             </div>
-            <p class="feedback__text">Задайте вопрос о клавиатурах, заказе или доставке. Ответим на e-mail в течение дня.</p>
+            <p class="feedback__text">Задайте вопрос о ремонте, сборке или заказе. Ответим на e-mail в течение дня.</p>
 
             <form class="order-form feedback__form" id="feedback-form" action="#" method="post" novalidate>
                 <p class="order-form__note">Поля со звёздочкой * обязательны для заполнения.</p>
@@ -111,9 +135,10 @@
                     <label class="order-form__label" for="feedback-topic">Тема <span class="order-form__required" aria-hidden="true">*</span></label>
                     <select class="order-form__select" id="feedback-topic" name="topic" required>
                         <option value="">Выберите тему</option>
-                        <option value="choice">Помощь с выбором клавиатуры</option>
+                        <option value="repair">Ремонт и чистка</option>
+                        <option value="build">Сборка на заказ</option>
                         <option value="order">Вопрос по заказу</option>
-                        <option value="warranty">Гарантия и ремонт</option>
+                        <option value="warranty">Гарантия</option>
                     </select>
                 </div>
 
@@ -125,7 +150,7 @@
                         name="message"
                         rows="4"
                         minlength="10"
-                        placeholder="Например, какие свитчи подойдут для игр"
+                        placeholder="Например, после чистки начала двоить клавиша E"
                         required
                     ></textarea>
                 </div>
@@ -158,31 +183,31 @@
             </div>
 
             <details class="faq__item">
-                <summary class="faq__question">Что такое горячая замена свитчей?</summary>
-                <p class="faq__answer">Это когда свитчи вставляются в плату без пайки. Их можно вытащить съёмником и поставить другие за пару минут.</p>
+                <summary class="faq__question">Можно принести клавиатуру другой фирмы?</summary>
+                <p class="faq__answer">Да, мы чистим и ремонтируем любые механические клавиатуры, не только собранные у нас.</p>
             </details>
             <details class="faq__item">
-                <summary class="faq__question">Какие свитчи выбрать новичку?</summary>
-                <p class="faq__answer">Для печати и игр обычно берут линейные, например Gateron Yellow. Если нравится ощущать нажатие, лучше тактильные. Проще всего купить тестер свитчей и попробовать все.</p>
+                <summary class="faq__question">Сколько стоит ремонт?</summary>
+                <p class="faq__answer">Диагностика бесплатная. После осмотра мастер называет цену и срок, а работу начинаем только после вашего согласия.</p>
             </details>
             <details class="faq__item">
-                <summary class="faq__question">Сколько идёт доставка?</summary>
-                <p class="faq__answer">По Москве курьер привезёт за 1-2 дня, в другие города 2-7 дней. Все способы описаны на странице <a href="delivery.html">доставки и оплаты</a>.</p>
+                <summary class="faq__question">Сколько времени занимает работа?</summary>
+                <p class="faq__answer">Чистка обычно занимает 1 день, чистка со смазкой свитчей 2-3 дня, ремонт после залития до 5 дней. Курьер может забрать клавиатуру и привезти обратно, подробнее на странице <a href="delivery.html">доставки и оплаты</a>.</p>
             </details>
             <details class="faq__item">
-                <summary class="faq__question">Можно ли вернуть клавиатуру?</summary>
-                <p class="faq__answer">Да, в течение 14 дней, если она не была в использовании и сохранена упаковка.</p>
+                <summary class="faq__question">Есть ли гарантия на работу?</summary>
+                <p class="faq__answer">Да, 6 месяцев на ремонт и чистку и 12 месяцев на клавиатуры, собранные в мастерской.</p>
             </details>
             <details class="faq__item">
-                <summary class="faq__question">Можно попробовать клавиатуры перед покупкой?</summary>
-                <p class="faq__answer">Да, в шоуруме стоят все клавиатуры из каталога и тестеры свитчей.</p>
+                <summary class="faq__question">Можно попробовать свитчи перед сборкой?</summary>
+                <p class="faq__answer">Да, в мастерской стоят тестеры свитчей и готовые сборки из каталога. Мастер поможет выбрать ход клавиш.</p>
             </details>
         </section>
 
         <aside class="promo">
             <div class="promo__content">
                 <h2 class="promo__title">Не нашли ответ?</h2>
-                <p class="promo__text">Оставьте заявку, и мы перезвоним в течение 15 минут в рабочее время.</p>
+                <p class="promo__text">Оставьте заявку, и мастер перезвонит в течение 15 минут в рабочее время.</p>
             </div>
             <a class="button button--primary promo__button" href="order.html?product=consultation">Оставить заявку</a>
         </aside>
@@ -192,40 +217,51 @@
         <div class="site-footer__inner">
             <div class="site-footer__column">
                 <a class="site-footer__logo" href="index.html">Клац</a>
-                <p class="site-footer__text">Механические клавиатуры, свитчи и кейкапы. Учебный проект по дисциплине "Фронтенд и бэкенд разработка".</p>
+                <p class="site-footer__text">Мастерская механических клавиатур в Москве. Собираем клавиатуры на заказ, чистим, смазываем и ремонтируем.</p>
+                <p class="site-footer__text">Гарантия 6 месяцев на ремонт и 12 месяцев на сборку.</p>
             </div>
 
-            <nav class="site-footer__column" aria-label="Разделы сайта">
-                <h2 class="site-footer__title">Разделы</h2>
+            <nav class="site-footer__column" aria-label="Услуги мастерской">
+                <h2 class="site-footer__title">Услуги</h2>
                 <ul class="site-footer__list">
-                    <li><a class="site-footer__link" href="index.html#advantages">Преимущества</a></li>
-                    <li><a class="site-footer__link" href="index.html#popular">Популярные товары</a></li>
-                    <li><a class="site-footer__link" href="catalog.html">Каталог</a></li>
-                    <li><a class="site-footer__link" href="order.html">Оформить заявку</a></li>
+                    <li><a class="site-footer__link" href="order.html?product=build">Сборка на заказ</a></li>
+                    <li><a class="site-footer__link" href="order.html?product=cleaning">Чистка и смазка</a></li>
+                    <li><a class="site-footer__link" href="order.html?product=repair">Ремонт</a></li>
+                    <li><a class="site-footer__link" href="order.html?product=mods">Шумоизоляция</a></li>
+                    <li><a class="site-footer__link" href="order.html?product=engraving">Гравировка</a></li>
                 </ul>
             </nav>
 
-            <nav class="site-footer__column" aria-label="Покупателям">
-                <h2 class="site-footer__title">Покупателям</h2>
+            <nav class="site-footer__column" aria-label="Клиентам">
+                <h2 class="site-footer__title">Клиентам</h2>
                 <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="catalog.html">Каталог сборок</a></li>
                     <li><a class="site-footer__link" href="delivery.html">Доставка и оплата</a></li>
+                    <li><a class="site-footer__link" href="delivery.html#warranty">Гарантия</a></li>
                     <li><a class="site-footer__link" href="contacts.html#faq">Частые вопросы</a></li>
-                    <li><a class="site-footer__link" href="contacts.html">Контакты</a></li>
+                    <li><a class="site-footer__link" href="order.html">Оставить заявку</a></li>
                 </ul>
             </nav>
 
             <div class="site-footer__column">
                 <h2 class="site-footer__title">Контакты</h2>
-                <ul class="site-footer__list">
-                    <li><a class="site-footer__link" href="tel:+79991234567">+7 (999) 123-45-67</a></li>
-                    <li><a class="site-footer__link" href="mailto:info@klac.example">info@klac.example</a></li>
-                    <li>Москва, ул. Примерная, 10</li>
-                    <li>Ежедневно с 10:00 до 20:00</li>
-                </ul>
+                <address class="site-footer__address">
+                    <ul class="site-footer__list">
+                        <li><a class="site-footer__link" href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+                        <li><a class="site-footer__link" href="mailto:info@klac.example">info@klac.example</a></li>
+                        <li>Москва, ул. Большая Новодмитровская, 36, стр. 2</li>
+                        <li>Пн-Пт 11:00-20:00</li>
+                        <li>Сб-Вс 12:00-18:00</li>
+                        <li><a class="site-footer__link" href="contacts.html#map">Как нас найти</a></li>
+                    </ul>
+                </address>
             </div>
         </div>
 
-        <p class="site-footer__copy">&copy; 2026 Клац. Климашевский Даниил, ЭФБО-07-25.</p>
+        <div class="site-footer__bottom">
+            <p class="site-footer__copy">&copy; 2026 Клац, мастерская механических клавиатур</p>
+            <p class="site-footer__copy">Учебный проект. Климашевский Даниил, ЭФБО-07-25</p>
+        </div>
     </footer>
 
     <a class="to-top" href="#top">Наверх</a>
