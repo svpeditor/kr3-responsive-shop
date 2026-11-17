@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сборка механической клавиатуры на заказ в мастерской Клац: выберите формат, свитчи и кейкапы, калькулятор посчитает цену.">
+    <title>Сборка на заказ | Клац</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Сборка на заказ | Клац">
+    <meta property="og:description" content="Сборка механической клавиатуры на заказ в мастерской Клац: выберите формат, свитчи и кейкапы, калькулятор посчитает цену.">
+    <meta property="og:image" content="https://svpeditor.github.io/kr3-responsive-shop/images/klac-60.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <header class="site-header" id="top">
+        <div class="site-header__inner">
+            <a class="site-header__logo" href="index.html">Клац</a>
+
+            <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">&#9776;</span> Меню</button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="services.html">Услуги и цены</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="build.html" aria-current="page">Сборка на заказ</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="status.html">Статус заказа</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+        <div class="page-header">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <ol class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Сборка на заказ</span></li>
+                </ol>
+            </nav>
+            <h1 class="page-header__title">Сборка клавиатуры на заказ</h1>
+            <p class="page-header__text">Выберите формат, свитчи и кейкапы, а калькулятор сразу посчитает цену. Мастер соберёт клавиатуру за 3-5 рабочих дней и проверит каждую клавишу.</p>
+        </div>
+
+        <div class="build">
+            <!--
+                Цены записаны в атрибутах data-price, количество клавиш в data-keys.
+                Итог считает js/main.js при каждом изменении формы.
+            -->
+            <form class="order-form build__form" id="build-form" action="#">
+                <fieldset class="order-form__group">
+                    <legend class="order-form__legend">Формат</legend>
+                    <div class="build__options">
+                        <label class="build__option"><input type="radio" name="layout" value="60" data-title="60%" data-keys="61" data-price="4900"> <span class="build__option-name">60%, 61 клавиша</span> <span class="build__option-price">4 900 ₽</span></label>
+                        <label class="build__option"><input type="radio" name="layout" value="65" data-title="65%" data-keys="68" data-price="5900" checked> <span class="build__option-name">65%, 68 клавиш</span> <span class="build__option-price">5 900 ₽</span></label>
+                        <label class="build__option"><input type="radio" name="layout" value="tkl" data-title="TKL" data-keys="87" data-price="6900"> <span class="build__option-name">TKL, 87 клавиш</span> <span class="build__option-price">6 900 ₽</span></label>
+                        <label class="build__option"><input type="radio" name="layout" value="full" data-title="полноразмерный" data-keys="104" data-price="7900"> <span class="build__option-name">Полноразмерная, 104 клавиши</span> <span class="build__option-price">7 900 ₽</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="order-form__group">
+                    <legend class="order-form__legend">Свитчи</legend>
+                    <div class="build__options">
+                        <label class="build__option"><input type="radio" name="switches" value="yellow" data-title="Gateron Yellow" data-price="30" checked> <span class="build__option-name">Gateron Yellow, линейные</span> <span class="build__option-price">30 ₽ за шт.</span></label>
+                        <label class="build__option"><input type="radio" name="switches" value="brown" data-title="Kailh Box Brown" data-price="45"> <span class="build__option-name">Kailh Box Brown, тактильные</span> <span class="build__option-price">45 ₽ за шт.</span></label>
+                        <label class="build__option"><input type="radio" name="switches" value="green" data-title="Cherry MX Green" data-price="110"> <span class="build__option-name">Cherry MX Green, кликающие</span> <span class="build__option-price">110 ₽ за шт.</span></label>
+                        <label class="build__option"><input type="radio" name="switches" value="own" data-title="свои" data-price="0"> <span class="build__option-name">Принесу свои свитчи</span> <span class="build__option-price">0 ₽</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="order-form__group">
+                    <legend class="order-form__legend">Кейкапы</legend>
+                    <div class="build__options">
+                        <label class="build__option"><input type="radio" name="keycaps" value="basic" data-title="базовые PBT" data-price="1900" checked> <span class="build__option-name">Базовые PBT, чёрные</span> <span class="build__option-price">1 900 ₽</span></label>
+                        <label class="build__option"><input type="radio" name="keycaps" value="orange" data-title="Orange" data-price="3300"> <span class="build__option-name">Orange, оранжевые и кремовые</span> <span class="build__option-price">3 300 ₽</span></label>
+                        <label class="build__option"><input type="radio" name="keycaps" value="camp" data-title="Кемпинг" data-price="4490"> <span class="build__option-name">Кемпинг, зелёные и бордовые</span> <span class="build__option-price">4 490 ₽</span></label>
+                        <label class="build__option"><input type="radio" name="keycaps" value="own" data-title="свои" data-price="0"> <span class="build__option-name">Принесу свои кейкапы</span> <span class="build__option-price">0 ₽</span></label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="order-form__group">
+                    <legend class="order-form__legend">Дополнительно</legend>
+                    <div class="build__options">
+                        <label class="build__option"><input type="checkbox" name="extras" value="lube" data-title="Смазка свитчей" data-price="20" data-per-key="yes" data-days="1"> <span class="build__option-name">Смазка свитчей</span> <span class="build__option-price">20 ₽ за шт.</span></label>
+                        <label class="build__option"><input type="checkbox" name="extras" value="foam" data-title="Шумоизоляция корпуса" data-price="1200" data-days="0"> <span class="build__option-name">Шумоизоляция корпуса</span> <span class="build__option-price">1 200 ₽</span></label>
+                        <label class="build__option"><input type="checkbox" name="extras" value="engraving" data-title="Гравировка на корпусе" data-price="900" data-days="1"> <span class="build__option-name">Гравировка надписи на корпусе</span> <span class="build__option-price">900 ₽</span></label>
+                        <label class="build__option"><input type="checkbox" name="extras" value="firmware" data-title="Настройка раскладки" data-price="500" data-days="0"> <span class="build__option-name">Прошивка и настройка раскладки</span> <span class="build__option-price">500 ₽</span></label>
+                    </div>
+                </fieldset>
+            </form>
+
+            <aside class="build-summary" aria-labelledby="build-summary-title">
+                <h2 class="build-summary__title" id="build-summary-title">Ваша сборка</h2>
+                <ul class="build-summary__list" id="build-list"></ul>
+                <p class="build-summary__label">Итого:</p>
+                <output class="build-summary__total" id="build-total">12 340 ₽</output>
+                <p class="build-summary__days" id="build-days">Срок сборки: 3 рабочих дня</p>
+                <a class="button button--primary" id="build-order-link" href="order.html?product=build">Оформить заявку на сборку</a>
+                <p class="build-summary__note">Работа мастера 2 500 ₽ уже входит в итог. Цена ориентировочная, мастер подтвердит её по телефону.</p>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer" id="contacts">
+        <div class="site-footer__inner">
+            <div class="site-footer__column">
+                <a class="site-footer__logo" href="index.html">Клац</a>
+                <p class="site-footer__text">Мастерская механических клавиатур в Москве. Собираем клавиатуры на заказ, чистим, смазываем и ремонтируем.</p>
+                <p class="site-footer__text">Гарантия 6 месяцев на ремонт и 12 месяцев на сборку.</p>
+            </div>
+
+            <nav class="site-footer__column" aria-label="Услуги мастерской">
+                <h2 class="site-footer__title">Услуги</h2>
+                <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="build.html">Сборка на заказ</a></li>
+                    <li><a class="site-footer__link" href="services.html#cleaning">Чистка и смазка</a></li>
+                    <li><a class="site-footer__link" href="services.html#repair">Ремонт</a></li>
+                    <li><a class="site-footer__link" href="services.html#extras">Шумоизоляция и гравировка</a></li>
+                    <li><a class="site-footer__link" href="services.html">Все услуги и цены</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__column" aria-label="Клиентам">
+                <h2 class="site-footer__title">Клиентам</h2>
+                <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="status.html">Статус заказа</a></li>
+                    <li><a class="site-footer__link" href="contacts.html#question">Вопрос мастеру</a></li>
+                    <li><a class="site-footer__link" href="catalog.html">Каталог сборок</a></li>
+                    <li><a class="site-footer__link" href="delivery.html">Доставка и оплата</a></li>
+                    <li><a class="site-footer__link" href="delivery.html#warranty">Гарантия</a></li>
+                    <li><a class="site-footer__link" href="contacts.html#faq">Частые вопросы</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-footer__column">
+                <h2 class="site-footer__title">Контакты</h2>
+                <address class="site-footer__address">
+                    <ul class="site-footer__list">
+                        <li><a class="site-footer__link" href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+                        <li><a class="site-footer__link" href="mailto:info@klac.example">info@klac.example</a></li>
+                        <li>Москва, ул. Большая Новодмитровская, 36, стр. 2</li>
+                        <li>Пн-Пт 11:00-20:00</li>
+                        <li>Сб-Вс 12:00-18:00</li>
+                        <li><a class="site-footer__link" href="contacts.html#map">Как нас найти</a></li>
+                    </ul>
+                </address>
+            </div>
+        </div>
+
+        <div class="site-footer__bottom">
+            <p class="site-footer__copy">&copy; 2026 Клац, мастерская механических клавиатур</p>
+            <p class="site-footer__copy">Учебный проект. Климашевский Даниил, ЭФБО-07-25</p>
+        </div>
+    </footer>
+
+    <a class="to-top" href="#top">Наверх</a>
+</body>
+</html>

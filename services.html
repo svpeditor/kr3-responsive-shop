@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Услуги и цены мастерской Клац: чистка и смазка, ремонт, сборка клавиатур, шумоизоляция и гравировка кейкапов.">
+    <title>Услуги и цены | Клац</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Услуги и цены | Клац">
+    <meta property="og:description" content="Услуги и цены мастерской Клац: чистка и смазка, ремонт, сборка клавиатур, шумоизоляция и гравировка кейкапов.">
+    <meta property="og:image" content="https://svpeditor.github.io/kr3-responsive-shop/images/klac-60.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <header class="site-header" id="top">
+        <div class="site-header__inner">
+            <a class="site-header__logo" href="index.html">Клац</a>
+
+            <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">&#9776;</span> Меню</button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="services.html" aria-current="page">Услуги и цены</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="build.html">Сборка на заказ</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="status.html">Статус заказа</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+        <div class="page-header">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <ol class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Услуги и цены</span></li>
+                </ol>
+            </nav>
+            <h1 class="page-header__title">Услуги и цены</h1>
+            <p class="page-header__text">Цены на основные работы мастерской. Точную стоимость ремонта мастер назовёт после бесплатной диагностики, работу начинаем только после вашего согласия.</p>
+        </div>
+
+        <nav class="categories" aria-label="Разделы прайса">
+            <ul class="categories__list">
+                <li><a class="categories__link" href="#cleaning">Чистка и смазка</a></li>
+                <li><a class="categories__link" href="#repair">Ремонт</a></li>
+                <li><a class="categories__link" href="#build">Сборка</a></li>
+                <li><a class="categories__link" href="#extras">Шумоизоляция и гравировка</a></li>
+            </ul>
+        </nav>
+
+        <!--
+            Прайс сделан обычными таблицами. На телефоне таблица info-table--cards
+            показывается карточками (название столбца берётся из data-label),
+            с 600px это снова таблица.
+        -->
+        <section class="section" id="cleaning">
+            <div class="section__header">
+                <h2 class="section__title">Чистка и смазка</h2>
+            </div>
+            <p class="price-note">Помогает, если клавиши залипают, скрипят или нажимаются по-разному.</p>
+            <div class="table-wrapper">
+                <table class="info-table info-table--cards info-table--price">
+                    <caption class="info-table__caption">Цены на чистку и смазку</caption>
+                    <thead>
+                        <tr>
+                            <th class="info-table__head" scope="col">Услуга</th>
+                            <th class="info-table__head" scope="col">Срок</th>
+                            <th class="info-table__head" scope="col">Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Диагностика</th><td class="info-table__cell" data-label="Срок">15-30 минут</td><td class="info-table__cell" data-label="Цена">Бесплатно</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Чистка клавиатуры: кейкапы, корпус, плата</th><td class="info-table__cell" data-label="Срок">1 день</td><td class="info-table__cell" data-label="Цена">от 1 200 ₽</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Чистка и смазка свитчей</th><td class="info-table__cell" data-label="Срок">2-3 дня</td><td class="info-table__cell" data-label="Цена">от 2 900 ₽</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Смазка стабилизаторов</th><td class="info-table__cell" data-label="Срок">1 день</td><td class="info-table__cell" data-label="Цена">600 ₽</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="repair">
+            <div class="section__header">
+                <h2 class="section__title">Ремонт</h2>
+            </div>
+            <p class="price-note">Ремонтируем любые механические клавиатуры, не только собранные у нас.</p>
+            <div class="table-wrapper">
+                <table class="info-table info-table--cards info-table--price">
+                    <caption class="info-table__caption">Цены на ремонт</caption>
+                    <thead>
+                        <tr>
+                            <th class="info-table__head" scope="col">Услуга</th>
+                            <th class="info-table__head" scope="col">Срок</th>
+                            <th class="info-table__head" scope="col">Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Замена свитча на плате с горячей заменой</th><td class="info-table__cell" data-label="Срок">15 минут</td><td class="info-table__cell" data-label="Цена">50 ₽ за свитч</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Перепайка свитча</th><td class="info-table__cell" data-label="Срок">1-2 дня</td><td class="info-table__cell" data-label="Цена">150 ₽ за свитч</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Ремонт после залития</th><td class="info-table__cell" data-label="Срок">2-5 дней</td><td class="info-table__cell" data-label="Цена">от 1 900 ₽</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Замена разъёма USB-C</th><td class="info-table__cell" data-label="Срок">1-2 дня</td><td class="info-table__cell" data-label="Цена">1 500 ₽</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="build">
+            <div class="section__header">
+                <h2 class="section__title">Сборка</h2>
+                <a class="section__link" href="build.html">Рассчитать сборку</a>
+            </div>
+            <p class="price-note">Собираем из наших комплектующих или из того, что вы принесли.</p>
+            <div class="table-wrapper">
+                <table class="info-table info-table--cards info-table--price">
+                    <caption class="info-table__caption">Цены на сборку</caption>
+                    <thead>
+                        <tr>
+                            <th class="info-table__head" scope="col">Услуга</th>
+                            <th class="info-table__head" scope="col">Срок</th>
+                            <th class="info-table__head" scope="col">Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Сборка из ваших комплектующих</th><td class="info-table__cell" data-label="Срок">2-3 дня</td><td class="info-table__cell" data-label="Цена">2 500 ₽</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Сборка из наших комплектующих</th><td class="info-table__cell" data-label="Срок">3-5 дней</td><td class="info-table__cell" data-label="Цена"><a href="build.html">Расчёт в калькуляторе</a></td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Прошивка и настройка раскладки</th><td class="info-table__cell" data-label="Срок">1 день</td><td class="info-table__cell" data-label="Цена">500 ₽</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="extras">
+            <div class="section__header">
+                <h2 class="section__title">Шумоизоляция и гравировка</h2>
+            </div>
+            <p class="price-note">
+                Шумоизоляция - это слой пены между платой и корпусом. Клавиатура звучит тише и глуше,
+                пропадает звон пружин. Гравировку делаем лазером на кейкапах и корпусе, надпись не стирается.
+            </p>
+            <div class="table-wrapper">
+                <table class="info-table info-table--cards info-table--price">
+                    <caption class="info-table__caption">Цены на шумоизоляцию и гравировку</caption>
+                    <thead>
+                        <tr>
+                            <th class="info-table__head" scope="col">Услуга</th>
+                            <th class="info-table__head" scope="col">Срок</th>
+                            <th class="info-table__head" scope="col">Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Шумоизоляция корпуса</th><td class="info-table__cell" data-label="Срок">1 день</td><td class="info-table__cell" data-label="Цена">1 200 ₽</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Гравировка кейкапа</th><td class="info-table__cell" data-label="Срок">1-2 дня</td><td class="info-table__cell" data-label="Цена">150 ₽ за клавишу</td></tr>
+                        <tr class="info-table__row"><th class="info-table__name" scope="row">Гравировка надписи на корпусе</th><td class="info-table__cell" data-label="Срок">1-2 дня</td><td class="info-table__cell" data-label="Цена">900 ₽</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="engraving__title">Предпросмотр гравировки</h3>
+            <div class="engraving">
+                <form class="order-form engraving__form" id="engraving-form" action="#">
+                    <div class="order-form__field">
+                        <label class="order-form__label" for="engraving-text">Текст надписи</label>
+                        <input
+                            class="order-form__input"
+                            id="engraving-text"
+                            name="text"
+                            type="text"
+                            maxlength="12"
+                            value="Клац"
+                            aria-describedby="engraving-text-hint"
+                        >
+                        <small class="order-form__hint" id="engraving-text-hint">До 12 символов</small>
+                    </div>
+
+                    <fieldset class="order-form__options">
+                        <legend class="order-form__label">Где гравировать</legend>
+                        <label class="order-form__option"><input type="radio" name="place" value="esc" data-price="150" checked> Клавиша Esc</label>
+                        <label class="order-form__option"><input type="radio" name="place" value="space" data-price="150"> Пробел</label>
+                        <label class="order-form__option"><input type="radio" name="place" value="case" data-price="900"> Корпус</label>
+                    </fieldset>
+                </form>
+
+                <div class="engraving__preview">
+                    <p class="engraving__label">Так будет выглядеть надпись:</p>
+                    <div class="engraving__key engraving__key--esc" id="engraving-key">
+                        <span id="engraving-result">Клац</span>
+                    </div>
+                    <p class="engraving__price">Стоимость: <output id="engraving-price">150 ₽</output></p>
+                    <a class="button button--primary" href="order.html?product=engraving">Заказать гравировку</a>
+                </div>
+            </div>
+        </section>
+
+        <aside class="promo">
+            <div class="promo__content">
+                <h2 class="promo__title">Не нашли нужную работу?</h2>
+                <p class="promo__text">Опишите, что случилось с клавиатурой, мастер ответит и подскажет цену.</p>
+            </div>
+            <a class="button button--primary promo__button" href="contacts.html#question">Задать вопрос мастеру</a>
+        </aside>
+    </main>
+
+    <footer class="site-footer" id="contacts">
+        <div class="site-footer__inner">
+            <div class="site-footer__column">
+                <a class="site-footer__logo" href="index.html">Клац</a>
+                <p class="site-footer__text">Мастерская механических клавиатур в Москве. Собираем клавиатуры на заказ, чистим, смазываем и ремонтируем.</p>
+                <p class="site-footer__text">Гарантия 6 месяцев на ремонт и 12 месяцев на сборку.</p>
+            </div>
+
+            <nav class="site-footer__column" aria-label="Услуги мастерской">
+                <h2 class="site-footer__title">Услуги</h2>
+                <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="build.html">Сборка на заказ</a></li>
+                    <li><a class="site-footer__link" href="services.html#cleaning">Чистка и смазка</a></li>
+                    <li><a class="site-footer__link" href="services.html#repair">Ремонт</a></li>
+                    <li><a class="site-footer__link" href="services.html#extras">Шумоизоляция и гравировка</a></li>
+                    <li><a class="site-footer__link" href="services.html">Все услуги и цены</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__column" aria-label="Клиентам">
+                <h2 class="site-footer__title">Клиентам</h2>
+                <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="status.html">Статус заказа</a></li>
+                    <li><a class="site-footer__link" href="contacts.html#question">Вопрос мастеру</a></li>
+                    <li><a class="site-footer__link" href="catalog.html">Каталог сборок</a></li>
+                    <li><a class="site-footer__link" href="delivery.html">Доставка и оплата</a></li>
+                    <li><a class="site-footer__link" href="delivery.html#warranty">Гарантия</a></li>
+                    <li><a class="site-footer__link" href="contacts.html#faq">Частые вопросы</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-footer__column">
+                <h2 class="site-footer__title">Контакты</h2>
+                <address class="site-footer__address">
+                    <ul class="site-footer__list">
+                        <li><a class="site-footer__link" href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+                        <li><a class="site-footer__link" href="mailto:info@klac.example">info@klac.example</a></li>
+                        <li>Москва, ул. Большая Новодмитровская, 36, стр. 2</li>
+                        <li>Пн-Пт 11:00-20:00</li>
+                        <li>Сб-Вс 12:00-18:00</li>
+                        <li><a class="site-footer__link" href="contacts.html#map">Как нас найти</a></li>
+                    </ul>
+                </address>
+            </div>
+        </div>
+
+        <div class="site-footer__bottom">
+            <p class="site-footer__copy">&copy; 2026 Клац, мастерская механических клавиатур</p>
+            <p class="site-footer__copy">Учебный проект. Климашевский Даниил, ЭФБО-07-25</p>
+        </div>
+    </footer>
+
+    <a class="to-top" href="#top">Наверх</a>
+</body>
+</html>
