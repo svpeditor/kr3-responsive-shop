@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Контакты мастерской Клац: адрес, карта, телефон, режим работы, форма обратной связи и ответы на частые вопросы.">
+    <meta name="description" content="Контакты мастерской Клац: адрес, карта, телефон, режим работы, вопрос мастеру и ответы на частые вопросы.">
     <title>Контакты | Клац</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Контакты | Клац">
-    <meta property="og:description" content="Контакты мастерской Клац: адрес, карта, телефон, режим работы, форма обратной связи и ответы на частые вопросы.">
+    <meta property="og:description" content="Контакты мастерской Клац: адрес, карта, телефон, режим работы, вопрос мастеру и ответы на частые вопросы.">
     <meta property="og:image" content="https://svpeditor.github.io/kr3-responsive-shop/images/klac-60.jpg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -25,12 +25,12 @@
             <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
                 <ul class="site-nav__list">
                     <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="services.html">Услуги и цены</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="build.html">Сборка на заказ</a></li>
                     <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="status.html">Статус заказа</a></li>
                     <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
                     <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">О мастерской</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Готовые сборки</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
                 </ul>
             </nav>
         </div>
@@ -93,21 +93,21 @@
             </p>
         </section>
 
-        <section class="section feedback" id="feedback">
+        <section class="section feedback" id="question">
             <div class="section__header">
-                <h2 class="section__title">Обратная связь</h2>
+                <h2 class="section__title">Вопрос мастеру</h2>
             </div>
-            <p class="feedback__text">Задайте вопрос о ремонте, сборке или заказе. Ответим на e-mail в течение дня.</p>
+            <p class="feedback__text">Опишите, что случилось с клавиатурой. Сразу после выбора проблемы подскажем примерную цену и срок, а мастер ответит на e-mail в течение дня.</p>
 
-            <form class="order-form feedback__form" id="feedback-form" action="#" method="post" novalidate>
+            <form class="order-form feedback__form" id="question-form" action="#" method="post" novalidate>
                 <p class="order-form__note">Поля со звёздочкой * обязательны для заполнения.</p>
 
                 <div class="order-form__row">
                     <div class="order-form__field">
-                        <label class="order-form__label" for="feedback-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
+                        <label class="order-form__label" for="question-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
                         <input
                             class="order-form__input"
-                            id="feedback-name"
+                            id="question-name"
                             name="name"
                             type="text"
                             placeholder="Введите ваше имя"
@@ -118,10 +118,10 @@
                     </div>
 
                     <div class="order-form__field">
-                        <label class="order-form__label" for="feedback-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
+                        <label class="order-form__label" for="question-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
                         <input
                             class="order-form__input"
-                            id="feedback-email"
+                            id="question-email"
                             name="email"
                             type="email"
                             placeholder="example@mail.ru"
@@ -131,22 +131,40 @@
                     </div>
                 </div>
 
-                <div class="order-form__field">
-                    <label class="order-form__label" for="feedback-topic">Тема <span class="order-form__required" aria-hidden="true">*</span></label>
-                    <select class="order-form__select" id="feedback-topic" name="topic" required>
-                        <option value="">Выберите тему</option>
-                        <option value="repair">Ремонт и чистка</option>
-                        <option value="build">Сборка на заказ</option>
-                        <option value="order">Вопрос по заказу</option>
-                        <option value="warranty">Гарантия</option>
-                    </select>
+                <div class="order-form__row">
+                    <div class="order-form__field">
+                        <label class="order-form__label" for="question-model">Модель клавиатуры</label>
+                        <input
+                            class="order-form__input"
+                            id="question-model"
+                            name="model"
+                            type="text"
+                            placeholder="Например, Keychron K8"
+                        >
+                    </div>
+
+                    <div class="order-form__field">
+                        <label class="order-form__label" for="question-problem">Что случилось <span class="order-form__required" aria-hidden="true">*</span></label>
+                        <select class="order-form__select" id="question-problem" name="problem" aria-describedby="question-hint" required>
+                            <option value="">Выберите вариант</option>
+                            <option value="dead-key">Не срабатывает клавиша</option>
+                            <option value="double">Клавиша срабатывает дважды</option>
+                            <option value="liquid">Залил жидкостью</option>
+                            <option value="rattle">Скрипит или дребезжит пробел</option>
+                            <option value="switches">Хочу заменить свитчи</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
                 </div>
 
+                <!-- Подсказку меняет js/main.js, aria-live сообщает об изменении программе чтения с экрана -->
+                <p class="question__hint" id="question-hint" aria-live="polite">Выберите, что случилось, и мы подскажем примерную цену и срок.</p>
+
                 <div class="order-form__field">
-                    <label class="order-form__label" for="feedback-message">Сообщение <span class="order-form__required" aria-hidden="true">*</span></label>
+                    <label class="order-form__label" for="question-message">Сообщение <span class="order-form__required" aria-hidden="true">*</span></label>
                     <textarea
                         class="order-form__textarea"
-                        id="feedback-message"
+                        id="question-message"
                         name="message"
                         rows="4"
                         minlength="10"
@@ -156,9 +174,23 @@
                 </div>
 
                 <div class="order-form__field">
+                    <label class="order-form__label" for="question-photo">Фото клавиатуры</label>
+                    <input
+                        class="order-form__input"
+                        id="question-photo"
+                        name="photo"
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        aria-describedby="question-photo-hint"
+                    >
+                    <small class="order-form__hint" id="question-photo-hint">Можно приложить несколько фото, так мастеру проще понять проблему</small>
+                </div>
+
+                <div class="order-form__field">
                     <label class="order-form__checkbox">
                         <input
-                            id="feedback-agreement"
+                            id="question-agreement"
                             name="agreement"
                             type="checkbox"
                             required
@@ -168,12 +200,12 @@
                 </div>
 
                 <div class="order-form__actions">
-                    <button class="button button--primary" type="submit">Отправить сообщение</button>
+                    <button class="button button--primary" type="submit">Отправить вопрос</button>
                 </div>
             </form>
 
-            <p class="success-message" id="feedback-success" hidden>
-                Сообщение отправлено! Ответим на e-mail в течение дня.
+            <p class="success-message" id="question-success" hidden>
+                Вопрос отправлен! Мастер ответит на e-mail в течение дня.
             </p>
         </section>
 
@@ -224,22 +256,23 @@
             <nav class="site-footer__column" aria-label="Услуги мастерской">
                 <h2 class="site-footer__title">Услуги</h2>
                 <ul class="site-footer__list">
-                    <li><a class="site-footer__link" href="order.html?product=build">Сборка на заказ</a></li>
-                    <li><a class="site-footer__link" href="order.html?product=cleaning">Чистка и смазка</a></li>
-                    <li><a class="site-footer__link" href="order.html?product=repair">Ремонт</a></li>
-                    <li><a class="site-footer__link" href="order.html?product=mods">Шумоизоляция</a></li>
-                    <li><a class="site-footer__link" href="order.html?product=engraving">Гравировка</a></li>
+                    <li><a class="site-footer__link" href="build.html">Сборка на заказ</a></li>
+                    <li><a class="site-footer__link" href="services.html#cleaning">Чистка и смазка</a></li>
+                    <li><a class="site-footer__link" href="services.html#repair">Ремонт</a></li>
+                    <li><a class="site-footer__link" href="services.html#extras">Шумоизоляция и гравировка</a></li>
+                    <li><a class="site-footer__link" href="services.html">Все услуги и цены</a></li>
                 </ul>
             </nav>
 
             <nav class="site-footer__column" aria-label="Клиентам">
                 <h2 class="site-footer__title">Клиентам</h2>
                 <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="status.html">Статус заказа</a></li>
+                    <li><a class="site-footer__link" href="contacts.html#question">Вопрос мастеру</a></li>
                     <li><a class="site-footer__link" href="catalog.html">Каталог сборок</a></li>
                     <li><a class="site-footer__link" href="delivery.html">Доставка и оплата</a></li>
                     <li><a class="site-footer__link" href="delivery.html#warranty">Гарантия</a></li>
                     <li><a class="site-footer__link" href="contacts.html#faq">Частые вопросы</a></li>
-                    <li><a class="site-footer__link" href="order.html">Оставить заявку</a></li>
                 </ul>
             </nav>
 

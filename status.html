@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Личный кабинет мастерской Клац: узнайте статус ремонта или сборки клавиатуры по номеру заказа.">
+    <title>Статус заказа | Клац</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Статус заказа | Клац">
+    <meta property="og:description" content="Личный кабинет мастерской Клац: узнайте статус ремонта или сборки клавиатуры по номеру заказа.">
+    <meta property="og:image" content="https://svpeditor.github.io/kr3-responsive-shop/images/klac-60.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <header class="site-header" id="top">
+        <div class="site-header__inner">
+            <a class="site-header__logo" href="index.html">Клац</a>
+
+            <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">&#9776;</span> Меню</button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="services.html">Услуги и цены</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="build.html">Сборка на заказ</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="status.html" aria-current="page">Статус заказа</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="delivery.html">Доставка</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+        <div class="page-header">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <ol class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Статус заказа</span></li>
+                </ol>
+            </nav>
+            <h1 class="page-header__title">Статус заказа</h1>
+            <p class="page-header__text">Узнайте, на каком этапе ваша клавиатура. Номер заказа приходит в SMS после того, как мастер принял клавиатуру.</p>
+        </div>
+
+        <div class="status">
+            <section class="status__search" aria-labelledby="status-search-title">
+                <h2 class="status__title" id="status-search-title">Найти заказ</h2>
+                <form class="order-form status__form" id="status-form" action="#" novalidate>
+                    <p class="order-form__note">Поля со звёздочкой * обязательны для заполнения.</p>
+
+                    <div class="order-form__field">
+                        <label class="order-form__label" for="status-number">Номер заказа <span class="order-form__required" aria-hidden="true">*</span></label>
+                        <input
+                            class="order-form__input"
+                            id="status-number"
+                            name="number"
+                            type="text"
+                            inputmode="numeric"
+                            maxlength="4"
+                            pattern="\d{4}"
+                            placeholder="1024"
+                            aria-describedby="status-number-hint"
+                            required
+                        >
+                        <small class="order-form__hint" id="status-number-hint">4 цифры из SMS</small>
+                    </div>
+
+                    <div class="order-form__field">
+                        <label class="order-form__label" for="status-phone">Последние 4 цифры телефона <span class="order-form__required" aria-hidden="true">*</span></label>
+                        <input
+                            class="order-form__input"
+                            id="status-phone"
+                            name="phone"
+                            type="text"
+                            inputmode="numeric"
+                            maxlength="4"
+                            pattern="\d{4}"
+                            placeholder="4567"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+
+                    <div class="order-form__actions">
+                        <button class="button button--primary" type="submit">Показать статус</button>
+                    </div>
+                </form>
+
+                <p class="status__message" id="status-message" aria-live="polite"></p>
+                <p class="status__demo">Для проверки: заказ 1024 и цифры 4567, заказ 2048 и 1234, заказ 3072 и 7777.</p>
+            </section>
+
+            <section class="order-status" id="order-status" aria-labelledby="order-status-title" hidden>
+                <h2 class="order-status__title" id="order-status-title" tabindex="-1">Заказ № <span id="order-status-number"></span></h2>
+                <dl class="order-status__details">
+                    <dt>Клавиатура</dt>
+                    <dd id="order-status-keyboard"></dd>
+                    <dt>Работа</dt>
+                    <dd id="order-status-service"></dd>
+                    <dt>Мастер</dt>
+                    <dd id="order-status-master"></dd>
+                    <dt>Стоимость</dt>
+                    <dd id="order-status-price"></dd>
+                    <dt>Готовность</dt>
+                    <dd id="order-status-ready"></dd>
+                </dl>
+
+                <h3 class="order-status__subtitle">Этапы работы</h3>
+                <ol class="status-steps" id="status-steps">
+                    <li class="status-steps__item">Принят <span class="status-steps__state"></span></li>
+                    <li class="status-steps__item">Диагностика <span class="status-steps__state"></span></li>
+                    <li class="status-steps__item">В работе <span class="status-steps__state"></span></li>
+                    <li class="status-steps__item">Проверка <span class="status-steps__state"></span></li>
+                    <li class="status-steps__item">Готов к выдаче <span class="status-steps__state"></span></li>
+                </ol>
+            </section>
+        </div>
+
+        <aside class="promo">
+            <div class="promo__content">
+                <h2 class="promo__title">Остались вопросы по заказу?</h2>
+                <p class="promo__text">Позвоните мастеру или напишите, ответим в течение 15 минут в рабочее время.</p>
+            </div>
+            <a class="button button--primary promo__button" href="contacts.html#question">Задать вопрос мастеру</a>
+        </aside>
+    </main>
+
+    <footer class="site-footer" id="contacts">
+        <div class="site-footer__inner">
+            <div class="site-footer__column">
+                <a class="site-footer__logo" href="index.html">Клац</a>
+                <p class="site-footer__text">Мастерская механических клавиатур в Москве. Собираем клавиатуры на заказ, чистим, смазываем и ремонтируем.</p>
+                <p class="site-footer__text">Гарантия 6 месяцев на ремонт и 12 месяцев на сборку.</p>
+            </div>
+
+            <nav class="site-footer__column" aria-label="Услуги мастерской">
+                <h2 class="site-footer__title">Услуги</h2>
+                <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="build.html">Сборка на заказ</a></li>
+                    <li><a class="site-footer__link" href="services.html#cleaning">Чистка и смазка</a></li>
+                    <li><a class="site-footer__link" href="services.html#repair">Ремонт</a></li>
+                    <li><a class="site-footer__link" href="services.html#extras">Шумоизоляция и гравировка</a></li>
+                    <li><a class="site-footer__link" href="services.html">Все услуги и цены</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__column" aria-label="Клиентам">
+                <h2 class="site-footer__title">Клиентам</h2>
+                <ul class="site-footer__list">
+                    <li><a class="site-footer__link" href="status.html">Статус заказа</a></li>
+                    <li><a class="site-footer__link" href="contacts.html#question">Вопрос мастеру</a></li>
+                    <li><a class="site-footer__link" href="catalog.html">Каталог сборок</a></li>
+                    <li><a class="site-footer__link" href="delivery.html">Доставка и оплата</a></li>
+                    <li><a class="site-footer__link" href="delivery.html#warranty">Гарантия</a></li>
+                    <li><a class="site-footer__link" href="contacts.html#faq">Частые вопросы</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-footer__column">
+                <h2 class="site-footer__title">Контакты</h2>
+                <address class="site-footer__address">
+                    <ul class="site-footer__list">
+                        <li><a class="site-footer__link" href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+                        <li><a class="site-footer__link" href="mailto:info@klac.example">info@klac.example</a></li>
+                        <li>Москва, ул. Большая Новодмитровская, 36, стр. 2</li>
+                        <li>Пн-Пт 11:00-20:00</li>
+                        <li>Сб-Вс 12:00-18:00</li>
+                        <li><a class="site-footer__link" href="contacts.html#map">Как нас найти</a></li>
+                    </ul>
+                </address>
+            </div>
+        </div>
+
+        <div class="site-footer__bottom">
+            <p class="site-footer__copy">&copy; 2026 Клац, мастерская механических клавиатур</p>
+            <p class="site-footer__copy">Учебный проект. Климашевский Даниил, ЭФБО-07-25</p>
+        </div>
+    </footer>
+
+    <a class="to-top" href="#top">Наверх</a>
+</body>
+</html>

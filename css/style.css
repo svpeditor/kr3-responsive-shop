@@ -1492,3 +1492,311 @@ min-height: 44px - поле удобно нажимать пальцем на т
     margin: 0;
     color: var(--color-muted);
 }
+
+/* ===============================
+13. Доработки КР №3: услуги, сборка, гравировка, вопрос мастеру, статус заказа
+=============================== */
+
+/*
+Подпись под заголовком раздела прайса.
+Сами цены в таблицах info-table--cards: на телефоне карточки, с 600px таблица.
+*/
+.price-note {
+    margin: 0 0 var(--space-md);
+    color: var(--color-muted);
+}
+
+/*
+Калькулятор сборки. На телефоне форма и итог идут друг под другом,
+с 1024px итог стоит справа и прилипает при прокрутке.
+*/
+.build {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-lg);
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.build__form {
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+/*
+Варианты выбора: на телефоне в одну колонку, с 768px по два в строке.
+*/
+.build__options {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-sm);
+}
+
+/*
+Весь вариант - это label, поэтому нажимать можно на любое место строки.
+min-height: 44px удобно для пальца.
+*/
+.build__option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.build__option:hover {
+    border-color: var(--color-primary);
+}
+
+/*
+Выбранный вариант выделяется рамкой и фоном.
+*/
+.build__option:has(input:checked) {
+    border-color: var(--color-primary);
+    background-color: var(--color-surface-accent);
+}
+
+.build__option-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.build__option-price {
+    margin-left: auto;
+    white-space: nowrap;
+    color: var(--color-muted);
+}
+
+.build-summary {
+    padding: var(--space-md);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.build-summary__title {
+    margin: 0 0 var(--space-sm);
+    font-size: 18px;
+}
+
+.build-summary__list {
+    margin: 0 0 12px;
+    padding-left: 20px;
+}
+
+.build-summary__list li {
+    margin-bottom: 6px;
+}
+
+.build-summary__label {
+    margin: 0;
+}
+
+.build-summary__total {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.build-summary__days {
+    margin: 0 0 var(--space-md);
+}
+
+.build-summary__note {
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+/*
+Предпросмотр гравировки. На телефоне форма и клавиша друг под другом,
+с 768px рядом.
+*/
+.engraving__title {
+    margin: var(--space-lg) 0 12px;
+    font-size: 18px;
+}
+
+.engraving {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.engraving__label {
+    margin: 0 0 12px;
+}
+
+/*
+Клавиша, на которой показывается надпись. Нижняя рамка толще,
+чтобы было похоже на кейкап.
+*/
+.engraving__key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+    background-color: var(--color-surface);
+    border: 1px solid #999999;
+    border-bottom-width: 6px;
+    border-radius: var(--radius-sm);
+}
+
+.engraving__key--space {
+    width: 100%;
+    max-width: 360px;
+    height: 64px;
+}
+
+.engraving__key--case {
+    width: 100%;
+    max-width: 360px;
+    height: 120px;
+    color: var(--color-white);
+    background-color: #333333;
+    border-color: #111111;
+}
+
+.engraving__price {
+    margin: 0 0 var(--space-md);
+}
+
+/*
+Подсказка с примерной ценой в форме "Вопрос мастеру".
+*/
+.question__hint {
+    margin: 0 0 var(--space-md);
+    padding: var(--space-sm) 12px;
+    background-color: var(--color-surface-accent);
+    border-left: 4px solid var(--color-primary);
+}
+
+/*
+Статус заказа. На телефоне поиск и результат друг под другом,
+с 1024px поиск слева, результат справа.
+*/
+.status {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-lg);
+    max-width: var(--container-width);
+    margin: 0 auto var(--space-xl);
+}
+
+.status__title {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.status__form {
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.status__message {
+    margin: var(--space-md) 0 0;
+    font-weight: bold;
+    color: var(--color-danger);
+}
+
+.status__message:empty {
+    display: none;
+}
+
+.status__demo {
+    margin: var(--space-md) 0 0;
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+.order-status {
+    padding: var(--space-md);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+.order-status__title {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.order-status__subtitle {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+/*
+Данные заказа: на телефоне название и значение друг под другом,
+с 600px в две колонки.
+*/
+.order-status__details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--space-md);
+    margin: 0 0 var(--space-md);
+}
+
+.order-status__details dt {
+    color: var(--color-muted);
+}
+
+.order-status__details dd {
+    margin: 0 0 var(--space-sm);
+    font-weight: bold;
+}
+
+/*
+Этапы заказа: на телефоне список сверху вниз, с 768px в одну строку.
+*/
+.status-steps {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.status-steps__item {
+    padding: 10px 12px;
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.status-steps__item--done {
+    color: var(--color-text);
+    border-color: var(--color-success);
+}
+
+.status-steps__item--current {
+    font-weight: bold;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.status-steps__state {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+}

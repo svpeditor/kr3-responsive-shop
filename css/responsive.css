@@ -12,10 +12,11 @@
 600px  - карточки товаров, преимущества и подвал в две колонки,
          таблица комплектаций снова обычная таблица;
 768px  - фото товара рядом с описанием, поля формы по два в строке,
-         контакты и способы оплаты в три колонки;
+         контакты и способы оплаты в три колонки, варианты сборки по два,
+         этапы заказа в одну строку;
 900px  - приветственный блок в две колонки, отзывы в три;
 1024px - меню в одну строку вместо кнопки "Меню", карточки в 3-4 колонки,
-         боковые блоки на страницах товара и заявки встают справа;
+         боковые блоки на страницах товара, заявки, сборки и статуса заказа встают справа;
 1200px - фильтры каталога слева от товаров и прилипают при прокрутке.
 
 Проверенные ширины: 360px, 430px, 768px, 1024px, 1440px.
@@ -113,6 +114,20 @@ body {
     .info-table--cards .info-table__cell::before {
         content: none;
     }
+
+    /*
+    В прайсе цена и срок не переносятся на две строки.
+    */
+    .info-table--price .info-table__cell {
+        white-space: nowrap;
+    }
+
+    /*
+    Данные заказа в две колонки: название слева, значение справа.
+    */
+    .order-status__details {
+        grid-template-columns: max-content minmax(0, 1fr);
+    }
 }
 
 /* ===============================
@@ -164,6 +179,32 @@ body {
 
     .map__frame {
         aspect-ratio: 16 / 9;
+    }
+
+    /*
+    Варианты в калькуляторе сборки по два в строке.
+    */
+    .build__options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .build__form {
+        padding: var(--space-lg);
+    }
+
+    /*
+    Форма гравировки слева, клавиша справа.
+    */
+    .engraving {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-lg);
+    }
+
+    /*
+    Пять этапов заказа в одну строку.
+    */
+    .status-steps {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
     .site-footer__inner {
@@ -268,6 +309,26 @@ body {
     .order__aside {
         position: sticky;
         top: calc(var(--header-height) + var(--space-md));
+    }
+
+    /*
+    Калькулятор сборки: форма слева, итог справа и прилипает при прокрутке,
+    чтобы цена была видна, пока выбираешь варианты.
+    */
+    .build {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+
+    .build-summary {
+        position: sticky;
+        top: calc(var(--header-height) + var(--space-md));
+    }
+
+    /*
+    Статус заказа: поиск слева, результат справа.
+    */
+    .status {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     }
 }
 
